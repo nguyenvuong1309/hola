@@ -11,6 +11,10 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import { Home } from './src/screens/Home';
+import React from 'react';
+import { Subscriptions } from './src/screens/Subscriptions';
+import { withIAPContext } from 'react-native-iap';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -28,10 +32,12 @@ function AppContent() {
 
   return (
     <View style={styles.container}>
-      <NewAppScreen
+      {/* <NewAppScreen
         templateFileName="App.tsx"
         safeAreaInsets={safeAreaInsets}
-      />
+      /> */}
+      {/* <Home navigation={undefined} /> */}
+      <Subscriptions navigation={undefined} />
     </View>
   );
 }
@@ -42,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default withIAPContext(App);
