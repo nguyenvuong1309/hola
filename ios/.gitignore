@@ -1,0 +1,13 @@
+# Fastlane
+fastlane/.env
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Match
+fastlane/certs
+
+# Xcode
+build/
+*.xcarchive
