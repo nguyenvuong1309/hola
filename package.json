@@ -8,6 +8,13 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "e2e:ios": "wdio wdio.conf.js",
+    "e2e:android": "wdio wdio.android.conf.js",
+    "e2e:demo": "wdio wdio.demo.conf.js",
+    "e2e:demo-manual": "wdio wdio.demo-manual.conf.js",
+    "e2e:working": "wdio wdio.working.conf.js",
+    "build:debug:ios": "cd ios && xcodebuild -workspace hola.xcworkspace -scheme hola -configuration Debug -sdk iphonesimulator -derivedDataPath build",
+    "build:debug:android": "cd android && ./gradlew assembleDebug",
     "build:ios": "cd ios && xcodebuild -workspace hola.xcworkspace -scheme hola -configuration Release -destination 'generic/platform=iOS' -archivePath ./build/hola.xcarchive archive",
     "export:ios": "cd ios && xcodebuild -exportArchive -archivePath ./build/hola.xcarchive -exportPath ./build -exportOptionsPlist ExportOptions.plist",
     "upload:testflight": "cd ios && xcrun altool --upload-app --type ios --file ./build/hola.ipa --username $APPLE_ID --password $APP_SPECIFIC_PASSWORD",
@@ -28,6 +35,7 @@
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
+    "@babel/register": "^7.28.3",
     "@babel/runtime": "^7.25.0",
     "@react-native-community/cli": "20.0.0",
     "@react-native-community/cli-platform-android": "20.0.0",
@@ -39,11 +47,20 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^19.1.0",
     "@types/react-test-renderer": "^19.1.0",
+    "@wdio/appium-service": "^9.19.2",
+    "@wdio/cli": "^9.19.2",
+    "@wdio/local-runner": "^9.19.2",
+    "@wdio/mocha-framework": "^9.19.2",
+    "@wdio/spec-reporter": "^9.19.2",
+    "appium": "^2.19.0",
+    "appium-uiautomator2-driver": "^4.2.9",
+    "appium-xcuitest-driver": "^9.10.5",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-test-renderer": "19.1.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "webdriverio": "^9.19.2"
   },
   "engines": {
     "node": ">=20"
