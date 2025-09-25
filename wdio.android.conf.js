@@ -11,11 +11,11 @@ exports.config = {
       platformName: 'Android',
       'appium:platformVersion': '13.0',
       'appium:deviceName': 'Android Emulator',
-      'appium:app': path.join(process.cwd(), 'android/app/build/outputs/apk/debug/app-debug.apk'),
+      'appium:app': path.join(process.cwd(), 'android/app/build/outputs/apk/amazon/debug/app-amazon-debug.apk'),
       'appium:automationName': 'UiAutomator2',
       'appium:noReset': false,
       'appium:fullReset': false,
-      'appium:avd': 'Pixel_API_33'
+      'appium:avd': 'Pixel_9a'
     }
   ],
   logLevel: 'info',

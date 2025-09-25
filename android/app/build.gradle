@@ -93,6 +93,12 @@ android {
             keyPassword 'android'
         }
     }
+    flavorDimensions "store"
+    productFlavors {
+        amazon {
+            dimension "store"
+        }
+    }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
